@@ -24,7 +24,7 @@ def end_screen() -> None:
                 mime="text/csv"
             )
 
-"""
+'''
     if st.button("Play again"):
         st.session_state.question_number = 1
         st.session_state.score = 0
@@ -32,4 +32,4 @@ def end_screen() -> None:
         st.session_state.saved = False
         st.session_state.screen = "welcome"
         st.rerun()
-"""
+'''
