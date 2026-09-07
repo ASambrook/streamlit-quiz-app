@@ -9,7 +9,7 @@ class MultipleChoiceQuestion(Question):
         self.options = options
 
 class TrueFalseQuestion(Question):
-    def __init__(self, text, options, correct_answer):
+    def __init__(self, text, correct_answer):
         super().__init__(text, correct_answer)
 
 questions = [
@@ -68,3 +68,4 @@ questions = [
         "Integrity" 
     ),
 ]
+
