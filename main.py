@@ -2,7 +2,7 @@ import streamlit as st
 
 from welcome_screen import welcome_screen
 from quiz_screen import quiz_screen
-
+from end_screen import end_screen
 
 TOTAL_QUESTIONS = 10
 

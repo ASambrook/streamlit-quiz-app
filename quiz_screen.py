@@ -29,7 +29,14 @@ def quiz_screen() -> None:
             key=f"answer_{qnum}"
         )
     
+    
     if st.button("Next Question"):
         st.session_state[f"user_answer_{qnum}"] = user_answer
+
+        if user_answer == question.correct_answer:
+            st.session_state.score += 1
+
         st.session_state["question_number"] = qnum + 1
         st.rerun()
+
+
