@@ -2,7 +2,6 @@ import streamlit as st
 from storage import save_result
 
 def end_screen() -> None:
-    '''testing docstrings'''
     name = st.session_state.name
     score = st.session_state.score
     total = st.session_state.get("total_questions", 10)

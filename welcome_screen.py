@@ -3,10 +3,20 @@ import streamlit as st
 import re
 
 class NameValidator:
+    """
+    Validates the users input for their Name
+    """
+
     def length_check(self, name: str) -> bool:
+        """
+        Checks if the name contains between 3 and 30 characters
+        """
         return 3 <= len(name.strip()) <= 30
 
     def pattern_check(self, name: str) -> bool:
+        """
+        Checks the name only contains the permitted characters (letters, spaces, apostrophes, and hyphens)
+        """
         pattern = r"[A-Za-z\s'-]+"
         return bool(re.fullmatch(pattern, name.strip()))
 
