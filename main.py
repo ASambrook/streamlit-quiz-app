@@ -8,6 +8,10 @@ TOTAL_QUESTIONS = 10
 
 
 def init_state() -> None:
+    """
+    Sets default values for the screens, name, questions number and score.
+    This allows the web application to reliably track the user's progress throughout the quiz
+    """
     st.session_state.setdefault("screen", "welcome")
     st.session_state.setdefault("name", "")
     st.session_state.setdefault("question_number", 1)
@@ -18,6 +22,10 @@ def init_state() -> None:
 
 
 def main() -> None:
+    """
+    Allows a smooth, organised navigation flow of the quiz.
+    The current screen stored in session state is checked and the corresponding screen is displayed.
+    """
     init_state()
 
     screen = st.session_state.screen
