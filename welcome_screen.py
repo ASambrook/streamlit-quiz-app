@@ -21,9 +21,16 @@ class NameValidator:
         return bool(re.fullmatch(pattern, name.strip()))
 
     def error_handler(self, message: str):
+        """
+        Enables an error message to display in streamlit
+        """
         st.error(message)
+        
 
     def validate_name(self, name: str) -> bool:
+        """
+        Checks if the name can be validated, and provides specific error messages for each validation error.
+        """
         if not self.length_check(name):
             self.error_handler("The name should be between 3 and 30 characters")
             return False
@@ -35,6 +42,11 @@ class NameValidator:
 validator = NameValidator()
 
 def welcome_screen():
+    """
+    Displays the welcome screen, with a title and introduction to the quiz.
+
+    Asks user for their name and if the name is successfully validated, proceeds to the next screen
+    """
     st.title("The Business Conduct Guidlines Quiz")
    
     st.write("""
