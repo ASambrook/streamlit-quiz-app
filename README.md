@@ -62,6 +62,10 @@ The final stage of the design process was to create a code design document. **Fi
 
 ## Development
 
+I began the development of the project by creating a python virtual environment. This allowed me to isolate the project’s dependencies and run the web application with [Streamlit](https://pypi.org/project/streamlit/) without any interference with global python packages.
+
+I began by setting up `main.py`, which acted as the central file for my project where I planned to import the rest of the [modules](https://docs.python.org/3/tutorial/modules.html). This allowed me to keep the code neat and structured, with 6 modules making up different sections of the quiz: `main.py`, `welcome_screen.py`, `questions.py`, `quiz_screen.py`, `end_screen.py`, and `storage.py`.
+
 
 
 ## Testing
