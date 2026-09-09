@@ -44,7 +44,6 @@ validator = NameValidator()
 def welcome_screen():
     """
     Displays the welcome screen, with a title and introduction to the quiz.
-
     Asks user for their name and if the name is successfully validated, proceeds to the next screen
     """
     st.title("The Business Conduct Guidlines Quiz")

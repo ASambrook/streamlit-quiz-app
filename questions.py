@@ -1,15 +1,31 @@
 class Question:
+    """
+    Parent class storing the question text and correct answer
+    """
     def __init__(self, text, correct_answer):
         self.text = text
         self.correct_answer = correct_answer
 
 class MultipleChoiceQuestion(Question):
+    """
+    A child class storing multiple choice questions with different options.
+    """
     def __init__(self, text, options, correct_answer):
+        """
+        Inherits common attributes from the parent Question class.
+        Adds a list of selectable options.
+        """
         super().__init__(text, correct_answer)
         self.options = options
 
 class TrueFalseQuestion(Question):
+    """
+    A child class storing True or False questions.
+    """
     def __init__(self, text, correct_answer):
+        """
+        inherits all atrributes from the parent Question class.
+        """
         super().__init__(text, correct_answer)
 
 questions = [
