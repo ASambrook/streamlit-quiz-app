@@ -71,17 +71,26 @@ I began by setting up `main.py`, which acted as the central file for my project 
 
 ### Manual Testing
 
+I did manual testing continuously throughout each stage of my development process. This allowed me to ensure each section was fully complete and worked correctly with Streamlit before progressing the project. For example, I would not move onto the `questions.py` module before my manual tests for the `welcome_screen` file were successfully passing.
+
+My manual tests can be seen in **Figure 5** below, this displays my method for each test, the expected result and whether the tests eventually passed. These were important as they allowed me to observe the web applications behaviour against the intended user navigation I created in the design section. There were often errors at first with each test, which is a key justification for why I decided to not develop any further stages of the quiz before my manual tests passed for the current stage.
+
+Test Case ID 3, the Screen navigation test, was a slight anomaly. This is because it was repeated each time I added a new module of code to my quiz, ensuring that the GUI continued to display everything in the intended order.
+
+![manual tests](manual_tests.png)  
+**Figure 5:** Table of Manual tests
+
 
 ### Automated Unit testing
 
 
 ![invalid name](validator_fail.png)
-**Figure 5:** Pytest fail for invalid name
+**Figure 6:** Pytest fail for invalid name
 
 -------------------------------------------------------------------------------------------------------------------------------
 
 ![valid name](validator_pass.png)  
-**Figure 6:** Pytest pass for valid name  
+**Figure 7:** Pytest pass for valid name  
 
 
 
@@ -94,7 +103,7 @@ I began by setting up `main.py`, which acted as the central file for my project 
 Click [This Link](https://app-quiz-app-w6bmfvcpflejdfuzzgca3a.streamlit.app) to launch the streamlit web application in your browser.
 
 **Step 2:**
-Read the introduction to gain an understanding of the importance of this quiz, proceed to follow instructions by writing your name in the indicated box. This name will have to meet certain requirements, an error messaged will explain if your inputted name does not meet this criteria, as shown in **Figure 7** below.
+Read the introduction to gain an understanding of the importance of this quiz, proceed to follow instructions by writing your name in the indicated box. This name will have to meet certain requirements, an error messaged will explain if your inputted name does not meet this criteria, as shown in **Figure 8** below.
 
 **Step 3:**
 After pressing begin quiz you will be faced with the first of ten questions, these will be a mixture of mutliple-choice and true or false questions. Read the questions and options carefully, and select one answer to each question before selecting 'Next Question' to save your answer and continue the quiz.
@@ -109,10 +118,11 @@ If you are not satisfied with yoru score you may select the 'Play again' button 
 You may download your results locally to [Excel](https://excel.cloud.microsoft/en-us/) by selecting the 'Download results CSV' button, and then the 'Download CSV' button which will display your name and score.
 
 ![Error message](error_message.png)  
-**Figure 7:** Name validation error message
+**Figure 8:** Name validation error message
 
 
 ### Technical Documentation
 
 
 ## Evaluation
+
