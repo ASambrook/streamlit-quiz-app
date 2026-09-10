@@ -83,6 +83,13 @@ Test Case ID 3, the Screen navigation test, was a slight anomaly. This is becaus
 
 ### Automated Unit testing
 
+I then carried out automated unit testing after all my manual tests were completed, as a final check before deploying my web application to the Streamlit community cloud. I decided to use the [Pytest](https://docs.pytest.org/en/stable/)
+Framework as it allowed me to write isolated unit tests by creating a virtual environment and then running `pip install pytest`in the terminal. 
+
+I began with a smoke test which can be seen at the top of **Figure 6**, this ensured the pytest framework was functioning correctly. I then went through some and tested some of the key functions and classes, such as the `NameValidator` class, these tests focused on checking the lengths and allowed character types for the user inputs. **Figure 6** shows that two tests failed, this is because of there being 31 characters in one input and an `!` in another input. This is then changed to 30 characters and removing the `!` in **Figure 7 which is why the tests all passed successfully.
+
+The automated testing was important as it allowed for quick checks at the end of my project, ensuring the key functions and classes were consistent, structured and importantly, correct.
+
 
 ![invalid name](validator_fail.png)
 **Figure 6:** Pytest fail for invalid name
