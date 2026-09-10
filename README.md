@@ -57,7 +57,7 @@ The Tech Stack outline below provides the various tools, frameworks, and program
 The final stage of the design process was to create a code design document. **Figure 4** shows the class diagram I created using [Draw.io](https://app.diagrams.net), a tool useful for creating professional diagrams. The class diagram uses [UML](https://www.omg.org/uml/) to visually represent the structure of a system, including its classes and how they relate to each other, such as the dark filled arrow representing inheritance between parent and child classes in **Figure 4**.
 
 ![Class Diagram](class_diagram.png)
-**Figure 4** Quiz application Class Diagram
+**Figure 4:** Quiz application Class Diagram
 
 ## Development
 
@@ -75,7 +75,16 @@ I began by setting up `main.py`, which acted as the central file for my project 
 ### Automated Unit testing
 
 
-![Name](validator_fail.png)
+![invalid name](validator_fail.png)
+**Figure 5:** Pytest fail for invalid name
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+![valid name](validator_pass.png)  
+**Figure 6:** Pytest pass for valid name  
+
+
+
 
 ## Documentation
 
@@ -85,7 +94,7 @@ I began by setting up `main.py`, which acted as the central file for my project 
 Click [This Link](https://app-quiz-app-w6bmfvcpflejdfuzzgca3a.streamlit.app) to launch the streamlit web application in your browser.
 
 **Step 2:**
-Read the introduction to gain an understanding of the importance of this quiz, proceed to follow instructions by writing your name in the indicated box. This name will have to meet certain requirements, an error messaged will explain if your inputted name does not meet this criteria.
+Read the introduction to gain an understanding of the importance of this quiz, proceed to follow instructions by writing your name in the indicated box. This name will have to meet certain requirements, an error messaged will explain if your inputted name does not meet this criteria, as shown in **Figure 7** below.
 
 **Step 3:**
 After pressing begin quiz you will be faced with the first of ten questions, these will be a mixture of mutliple-choice and true or false questions. Read the questions and options carefully, and select one answer to each question before selecting 'Next Question' to save your answer and continue the quiz.
@@ -99,7 +108,9 @@ If you are not satisfied with yoru score you may select the 'Play again' button 
 **Step 6:**
 You may download your results locally to [Excel](https://excel.cloud.microsoft/en-us/) by selecting the 'Download results CSV' button, and then the 'Download CSV' button which will display your name and score.
 
-SCREEN SHOT HERE 
+![Error message](error_message.png)  
+**Figure 7:** Name validation error message
+
 
 ### Technical Documentation
 
