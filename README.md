@@ -23,7 +23,6 @@ The first stage of this project was to begin the design process. I began this us
 **Figure 1:** Wireframe
 
 
-
 ### Functional and Non-functional Requirements
 
 #### Functional requirements
@@ -70,12 +69,20 @@ I began by setting up `main.py`, which acted as the central file for my project 
 
 ## Testing
 
+### Manual Testing
+
+
+### Automated Unit testing
+
+
+![Name](validator_fail.png)
+
 ## Documentation
 
 ### User Documentation
 
 **Step 1:**
-Click [This Link](http://localhost:8501/) to launch the streamlit web application in your browser.
+Click [This Link](https://app-quiz-app-w6bmfvcpflejdfuzzgca3a.streamlit.app) to launch the streamlit web application in your browser.
 
 **Step 2:**
 Read the introduction to gain an understanding of the importance of this quiz, proceed to follow instructions by writing your name in the indicated box. This name will have to meet certain requirements, an error messaged will explain if your inputted name does not meet this criteria.
