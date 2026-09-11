@@ -150,7 +150,7 @@ The automated testing importantly allowed for quick checks at the end of my proj
 Click [This Link](https://app-quiz-app-w6bmfvcpflejdfuzzgca3a.streamlit.app) to launch the Streamlit web application in your browser.
 
 **Step 2:**
-Read the introduction for the quiz context, follow the instructions by writing your name in the indicated box. This name will have to meet certain requirements, an error messaged will explain if your inputted name does not meet these criteria, as shown in **Figure 7** below.
+Read the introduction for the quiz context, follow the instructions by writing your name in the indicated box. This name will have to meet certain requirements, an error messaged will explain if your inputted name does not meet these criteria, as shown in **Figure 8** below.
 
 **Step 3:**
 After pressing begin quiz you will be faced with the first question, these will be a mixture of multiple-choice and true or false questions. Select one answer to each question before selecting 'Next Question' to save your answer and continue the quiz.
