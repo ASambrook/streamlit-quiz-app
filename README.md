@@ -65,17 +65,56 @@ I began the development of the project by creating a python virtual environment.
 
 I began by setting up `main.py`, which acted as the central file for my project where I planned to import the rest of the [modules](https://docs.python.org/3/tutorial/modules.html). This allowed me to keep the code neat and structured, with 6 modules making up different sections of the quiz: `main.py`, `welcome_screen.py`, `questions.py`, `quiz_screen.py`, `end_screen.py`, and `storage.py`.
 
+The first file I worked on was `welcome_screen.py`, this was where I had to create a title and add context to the quiz for the user. I also had the challenge of creating a `NameValidator` class, with the purpose of ensuring user names met specfic requirements, otherwise met with an error message such as the one shwon in **Fugyre 8**. My validation requirements had pattern checks which ensured only permitted characters were used, for example no `?` were allowed. The other check was the length of the names, which I ensured using the function below, which allows between 3 and 30 characters for a name.
 
+```
+def length_check(self, name: str) -> bool:
+        """
+        Checks if the name contains between 3 and 30 characters
+        """
+        return 3 <= len(name.strip()) <= 30
+```
+
+Next, I moved onto the `questions.py`.  I created my questions using a parent class `Question` and two child classes: `MultipleChoiceQuestion` and `TrueFalseQuestion` which inherited the methods and attributes from the parent class. This allowed me to reuse the general code for questions into more specific code for the type of question which can be seen below for the `MultipleChoiceQuestion`.
+
+```
+class MultipleChoiceQuestion(Question):
+    """
+    A child class storing multiple choice questions with different options.
+    """
+    def __init__(self, text, options, correct_answer):
+        """
+        Inherits common attributes from the parent Question class.
+        Adds a list of selectable options.
+        """
+        super().__init__(text, correct_answer)
+        self.options = options
+```
+I imported the questions into my `quiz_screen.py` file where I created some logic of scoring and loading questions, which eventually led to `end_screen.py` and `storage.py`. I built a `save_result` function in `Storage.py` which saved an individual’s score and name, and then a `load_results` function which allowed all previous results to be read, I then imported this into `end_screen.py`. This screen shows the user score, an option to download a CSV file of the results and a `Play again` button which reset all the session states to their original values. This allows the user to have a completely fresh retry of the quiz, the code for this section can be seen below.
+
+```
+if st.button("Play again"):
+        st.session_state.question_number = 1
+        st.session_state.score = 0
+        st.session_state.question = None
+        st.session_state.saved = False
+        st.session_state.screen = "welcome"
+        st.rerun()
+
+```
+I imported each module into `main.py`, this approach allowed this central file to be structured and readable, I then focused ensuring smooth navigation of the screens.
+Finally, I completed the automated tests at the end which can be found in the `Testing`section, and then I uploaded my web application to the Streamlit community cloud.
 
 ## Testing
 
 ### Manual Testing
 
-I did manual testing continuously throughout each stage of my development process. This allowed me to ensure each section was fully complete and worked correctly with Streamlit before progressing the project. For example, I would not move onto the `questions.py` module before my manual tests for the `welcome_screen` file were successfully passing.
+I did manual testing throughout each stage of my development process. This checked each section was fully complete and worked correctly with Streamlit before progressing the project. For example, I would not move onto the `questions.py` module before my manual tests for the `welcome_screen.py` file were successfully passing.
 
-My manual tests can be seen in **Figure 5** below, this displays my method for each test, the expected result and whether the tests eventually passed. These were important as they allowed me to observe the web applications behaviour against the intended user navigation I created in the design section. There were often errors at first with each test, which is a key justification for why I decided to not develop any further stages of the quiz before my manual tests passed for the current stage.
+My manual tests can be seen in **Figure 5** below, this displays my method, the expected result and whether the tests eventually passed. These importantly allowed me to observe the web applications behaviour against the intended user navigation I created in the design section. There were often errors at first with each test, a key justification for why I decided to not develop any further stages of the quiz before my manual tests passed for the current stage.
 
 Test Case ID 3, the Screen navigation test, was a slight anomaly. This is because it was repeated each time I added a new module of code to my quiz, ensuring that the GUI continued to display everything in the intended order.
+
 
 ![manual tests](manual_tests.png)  
 **Figure 5:** Table of Manual tests
@@ -83,12 +122,12 @@ Test Case ID 3, the Screen navigation test, was a slight anomaly. This is becaus
 
 ### Automated Unit testing
 
-I then carried out automated unit testing after all my manual tests were completed, as a final check before deploying my web application to the Streamlit community cloud. I decided to use the [Pytest](https://docs.pytest.org/en/stable/)
+I then carried out automated unit testing as a final check before deploying my web application to the Streamlit community cloud. I decided to use the [Pytest](https://docs.pytest.org/en/stable/)
 Framework as it allowed me to write isolated unit tests by creating a virtual environment and then running `pip install pytest`in the terminal. 
 
 I began with a smoke test which can be seen at the top of **Figure 6**, this ensured the pytest framework was functioning correctly. I then went through some and tested some of the key functions and classes, such as the `NameValidator` class, these tests focused on checking the lengths and allowed character types for the user inputs. **Figure 6** shows that two tests failed, this is because of there being 31 characters in one input and an `!` in another input. This is then changed to 30 characters and removing the `!` in **Figure 7 which is why the tests all passed successfully.
 
-The automated testing was important as it allowed for quick checks at the end of my project, ensuring the key functions and classes were consistent, structured and importantly, correct.
+The automated testing importantly allowed for quick checks at the end of my project, ensuring the key functions and classes were consistent, structured and correct. I also set up [Continuous Integration](https://www.atlassian.com/continuous-delivery/continuous-integration), which allowed automated unit tests to run automatically on any future code commits.
 
 
 ![invalid name](validator_fail.png)
@@ -133,3 +172,9 @@ You may download your results locally to [Excel](https://excel.cloud.microsoft/e
 
 ## Evaluation
 
+On reflection, I am pleased with how my [Python](https://docs.python.org/3/) developed web application closely matches to my initial wireframe design of the [GUI](https://www.britannica.com/technology/graphical-user-interface) and user navigation on [Figma](https://www.figma.com). I also found the choosing [Streamlit](https://pypi.org/project/streamlit/) as my method of hosting and deploying the app beneficial, I found the Streamlit documentation easy to follow and implement. It enabled me to quickly check my quiz and conduct manual tests throughout the development process.
+
+However, I do think there are numerous improvements I could have implemented from the start of the project. On reflection I don’t believe I used automated unit testing as effectively as I could have, it would have been more effective to use [Pytest](https://docs.pytest.org/en/stable/) in a [Test-driven development](https://agilealliance.org/glossary/tdd/) style as I built each unit of code.
+Similarly, I did not set up [Continuous Integration](https://www.atlassian.com/continuous-delivery/continuous-integration) until the end of my development process which would have ensured automated testing and high quality code for my early commits to [GitHub](https://github.com).
+
+Overall, I believe this has been a successful project, as the developed quiz web application reflects my initial design and purpose of the quiz and a smooth user experience is provided.
